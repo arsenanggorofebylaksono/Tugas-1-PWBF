@@ -1,0 +1,10 @@
+{%load static %} {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'blogs/style.css' %}" />
+<html>
+<h1>Daftar Blog</h1>
+<ul>{% for blogs in blogs %}
+    <li><a href="{% url 'blogs:blog_entries' blogs.id %}">{{blogs.name}}: {{blogs.tagline}}</a></li>
+    {% endfor %}
+</ul>
+
+</html>
